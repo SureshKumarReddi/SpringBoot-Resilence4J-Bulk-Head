@@ -1,0 +1,17 @@
+server:
+  port: 2222
+  
+resilience4j:
+   bulkhead:
+    instances: 
+      bulk : 
+        max-concurrent-calls: 5
+        max-wait-duration: 0
+        
+        
+        
+#max-concurrent-calls=5’ indicates that if the number of concurrent calls exceed 5, 
+#activate the fallback method.
+
+#‘max-wait-duration=0’ indicates that don’t wait for anything, 
+#show response immediately based on the configuration.
